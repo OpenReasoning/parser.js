@@ -8,7 +8,8 @@
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "eslint \"src/**/*.ts\" && eslint \"test/**/*.ts\"",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "coveralls": "coveralls coverage/lcov.info"
   },
   "repository": {
     "type": "git",
