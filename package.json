@@ -1,0 +1,35 @@
+{
+  "name": "@openreasoning/parser",
+  "version": "0.1.0",
+  "description": "Parser for various forms of logical statements",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "eslint \"src/**/*.ts\" && eslint \"test/**/*.ts\"",
+    "test": "jest --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenReasoning/parser.js.git"
+  },
+  "author": "Matthew Peveler <matt.peveler@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OpenReasoning/parser.js/issues"
+  },
+  "homepage": "https://github.com/OpenReasoning/parser.js#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.12",
+    "@types/node": "^11.13.8",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/parser": "^1.7.0",
+    "coveralls": "^3.0.3",
+    "eslint": "^5.16.0",
+    "jest": "^24.7.1",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.4.5"
+  },
+  "dependencies": {}
+}
