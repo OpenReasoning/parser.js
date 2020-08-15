@@ -11,6 +11,4 @@ module.exports = {
     '<rootDir>/src/**/*.ts',
     '!<rootDir>/src/**/*.d.ts'
   ],
-  coverageDirectory: '<rootDir>/coverage',
-  coverageReporters: ['html', 'lcov', 'text']
-}
+};
