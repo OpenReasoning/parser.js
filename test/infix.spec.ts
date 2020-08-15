@@ -10,14 +10,14 @@ test('simple parse with paranthesis', (): void => {
 });
 
 test('parse with three arguments', (): void => {
-  let expected = new Node('&');
+  const expected = new Node('&');
   expected.children.push(new Node('a'));
   expected.children.push(new Node('b'));
   expect(parse('(a & b')).toEqual(expected);
 });
 
 test('parse nested arguments', (): void => {
-  let expected = new Node('&');
+  const expected = new Node('&');
   expected.children.push(new Node('|'));
   expected.children[0].children.push(new Node('a'));
   expected.children[0].children.push(new Node('b'));
@@ -26,7 +26,7 @@ test('parse nested arguments', (): void => {
 });
 
 test('parse left nested arguments', (): void => {
-  let expected = new Node('&');
+  const expected = new Node('&');
   expected.children.push(new Node('c'));
   expected.children.push(new Node('|'));
   expected.children[1].children.push(new Node('a'));
@@ -63,21 +63,21 @@ test('error when ) in second argument', (): void => {
 });
 
 test('extra spaces', (): void => {
-  let expected = new Node('bc');
+  const expected = new Node('bc');
   expected.children.push(new Node('a'));
   expected.children.push(new Node('c'));
   expect(parse('(a  bc  c)')).toEqual(expected);
 });
 
 test('extra spaces before first argument', (): void => {
-  let expected = new Node('bc');
+  const expected = new Node('bc');
   expected.children.push(new Node('a'));
   expected.children.push(new Node('c'));
   expect(parse('(   a bc c)')).toEqual(expected);
 });
 
 test('extra spaces after last argument', (): void => {
-  let expected = new Node('bc');
+  const expected = new Node('bc');
   expected.children.push(new Node('a'));
   expected.children.push(new Node('c'));
   expect(parse('(a bc c    )')).toEqual(expected);

@@ -10,14 +10,14 @@ test('simple parse2', (): void => {
 });
 
 test('simple parse with children', (): void => {
-  let expected = new Node('and');
+  const expected = new Node('and');
   expected.children.push(new Node('a'));
   expected.children.push(new Node('b'));
   expect(parse('(and a b)')).toEqual(expected);
 });
 
 test('test nested parse', (): void => {
-  let expected = new Node('and');
+  const expected = new Node('and');
   expected.children.push(new Node('or'));
   expected.children[0].children.push(new Node('a'));
   expected.children[0].children.push(new Node('b'));
@@ -70,14 +70,14 @@ test('invalid character after closing parenthesis arguments', (): void => {
 });
 
 test('parse valid with extra closing parenthesis', (): void => {
-  let expected = new Node('and');
+  const expected = new Node('and');
   expected.children.push(new Node('a'));
   expected.children.push(new Node('b'));
   expect(parse('(and a b))))')).toEqual(expected);
 });
 
 test('multiple arguments', (): void => {
-  let expected = new Node('and');
+  const expected = new Node('and');
   expected.children.push(new Node('a'));
   expected.children.push(new Node('b'));
   expected.children.push(new Node('c'));

@@ -11,21 +11,21 @@ test('error create empty node', (): void => {
 });
 
 test('prefixParser', (): void => {
-  let expected = new Node('and');
+  const expected = new Node('and');
   expected.children.push(new Node('a'));
   expected.children.push(new Node('b'));
   expect(prefixParser('(and a b)')).toEqual(expected);
 });
 
 test('functionalParser', (): void => {
-  let expected = new Node('and');
+  const expected = new Node('and');
   expected.children.push(new Node('a'));
   expected.children.push(new Node('b'));
   expect(functionalParser('and(a,b)')).toEqual(expected);
 });
 
 test('infixParser', (): void => {
-  let expected = new Node('and');
+  const expected = new Node('and');
   expected.children.push(new Node('a'));
   expected.children.push(new Node('b'));
   expect(infixParser('(a and b)')).toEqual(expected);

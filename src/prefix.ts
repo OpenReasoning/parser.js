@@ -11,7 +11,6 @@ export function parse(formula: string): Node {
   }
 
   let current = '';
-  let node: Node;
   if (formula.charAt(0) !== '(') {
     throw new Error('Must surround formula with ()');
   }
@@ -19,7 +18,7 @@ export function parse(formula: string): Node {
   let i = 1;
   let open = 1;
   while (i < formula.length) {
-    let char = formula.charAt(i);
+    const char = formula.charAt(i);
     if (char === '(') {
       throw new Error('Cannot have ( in first argument');
     }
@@ -38,7 +37,7 @@ export function parse(formula: string): Node {
   if (current === '') {
     throw new Error('Cannot have blank first argument');
   }
-  node = new Node(current);
+  const node = new Node(current);
   if (open === 0) {
     while (i < formula.length) {
       if (formula.charAt(i) !== ')') {
@@ -49,7 +48,7 @@ export function parse(formula: string): Node {
   }
   current = '';
   while (i < formula.length) {
-    let char = formula.charAt(i);
+    const char = formula.charAt(i);
     if (char === ' ' && open === 1) {
       if (current !== '') {
         node.children.push(parse(current));

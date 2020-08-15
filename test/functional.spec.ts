@@ -6,14 +6,14 @@ test('simple parse', (): void => {
 });
 
 test('simple parse of one node and two children', (): void => {
-  let expected = new Node('and');
+  const expected = new Node('and');
   expected.children.push(new Node('a'));
   expected.children.push(new Node('b'));
   expect(parse('and(a,b)')).toEqual(expected);
 });
 
 test('parse complex node', (): void => {
-  let expected = new Node('and');
+  const expected = new Node('and');
   expected.children.push(new Node('or'));
   expected.children.push(new Node('if'));
   expected.children[0].children.push(new Node('a'));
@@ -28,7 +28,7 @@ test('parse trim whitespace', (): void => {
 });
 
 test('parse trim whitespace of children', (): void => {
-  let expected = new Node('and');
+  const expected = new Node('and');
   expected.children.push(new Node('a'));
   expected.children.push(new Node('b'));
   expect(parse('and( a , b )')).toEqual(expected);
@@ -53,7 +53,7 @@ test('parse empty second child throws error', (): void => {
 });
 
 test('parse multiple children', (): void => {
-  let expected = new Node('Test');
+  const expected = new Node('Test');
   expected.children.push(new Node('a'));
   expected.children.push(new Node('b'));
   expected.children.push(new Node('c'));
@@ -61,7 +61,7 @@ test('parse multiple children', (): void => {
 });
 
 test('ignore extra closing parantheses', (): void => {
-  let expected = new Node('and');
+  const expected = new Node('and');
   expected.children.push(new Node('a'));
   expected.children.push(new Node('b'));
   expect(parse('and(a,b))))')).toEqual(expected);

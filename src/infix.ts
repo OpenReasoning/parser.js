@@ -5,7 +5,6 @@ export function parse(formula: string): Node {
     return new Node(formula);
   }
 
-  let node: Node;
   if (formula.charAt(0) !== '(') {
     throw new Error('Must surround formula with ()');
   }
@@ -15,13 +14,13 @@ export function parse(formula: string): Node {
   while (formula.charAt(i) === ' ') {
     i++;
   }
-  
-  let children: Node[] = [];
+
+  const children: Node[] = [];
 
   // get first argument
   let current = '';
   while (i < formula.length) {
-    let char = formula.charAt(i);
+    const char = formula.charAt(i);
     if (char === ' ' && open == 1) {
       break;
     }
@@ -56,7 +55,7 @@ export function parse(formula: string): Node {
   // get second argument
   current = '';
   while (i < formula.length) {
-    let char = formula.charAt(i);
+    const char = formula.charAt(i);
     if (char === ' ' && open == 1) {
       break;
     }
@@ -70,7 +69,7 @@ export function parse(formula: string): Node {
     i++;
   }
 
-  node = new Node(current);
+  const node = new Node(current);
   while (formula.charAt(i) === ' ') {
     i++;
   }
@@ -79,7 +78,7 @@ export function parse(formula: string): Node {
   current = '';
   let space = false;
   while (i < formula.length) {
-    let char = formula.charAt(i);
+    const char = formula.charAt(i);
     if (char === ' ' && open == 1) {
       space = true;
       i++;
