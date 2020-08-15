@@ -1,9 +1,9 @@
 parser.js
 =========
 
-[![Build Status](https://travis-ci.com/OpenReasoning/parser.js.svg?branch=master)](https://travis-ci.com/OpenReasoning/parser.js)
-[![Coverage Status](https://coveralls.io/repos/github/OpenReasoning/parser.js/badge.svg?branch=master)](https://coveralls.io/github/OpenReasoning/parser.js?branch=master)
-![NPM Version](https://img.shields.io/npm/v/@openreasoning/parser.svg)
+[![Test](https://github.com/OpenReasoning/parser.js/workflows/Test/badge.svg?branch=master&event=push)](https://github.com/OpenReasoning/parser.js/actions?query=workflow%3ATest+branch%3Amaster+event%3Apush)
+[![codecov](https://codecov.io/gh/OpenReasoning/parser.js/branch/master/graph/badge.svg)](https://codecov.io/gh/OpenReasoning/parser.js)
+[![NPM Version](https://img.shields.io/npm/v/@openreasoning/parser.svg)](https://npmjs.com/package/@openreasoning/parser)
 
 A parser to be used in logic programs.
 
